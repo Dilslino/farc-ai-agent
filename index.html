@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farc | by xDill</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+      
+      :root {
+        --bg-color: #fdfbf7; /* Warm white for pastel theme */
+      }
+
+      body {
+        font-family: 'Manrope', sans-serif;
+        background-color: var(--bg-color);
+        color: #3f3f46;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: background-color 0.5s ease;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+
+      /* Elegant Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #e4e4e7; 
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d4d4d8; 
+      }
+
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes aurora {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        zinc: {
+                            850: '#1f1f22',
+                            950: '#09090b', 
+                        },
+                        pastel: {
+                            bg: '#fdfbf7',
+                            card: '#ffffff',
+                            accent1: '#ffddd2', // Soft Peach
+                            accent2: '#e0e7ff', // Soft Indigo
+                            accent3: '#d1fae5', // Soft Mint
+                            text: '#4b5563'
+                        }
+                    },
+                    typography: (theme) => ({
+                        DEFAULT: {
+                            css: {
+                                color: theme('colors.zinc.600'),
+                                fontSize: '0.95rem',
+                                lineHeight: '1.7',
+                                strong: {
+                                    color: theme('colors.zinc.800'),
+                                    fontWeight: '600',
+                                },
+                                a: {
+                                    color: theme('colors.indigo.500'),
+                                    textDecoration: 'none',
+                                    borderBottom: '1px solid transparent',
+                                    transition: 'border-color 0.2s',
+                                    '&:hover': {
+                                        borderColor: theme('colors.indigo.500'),
+                                    },
+                                },
+                                code: {
+                                    color: theme('colors.indigo.600'),
+                                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                                    padding: '2px 4px',
+                                    borderRadius: '4px',
+                                    fontWeight: '500',
+                                },
+                            },
+                        },
+                    }),
+                }
+            }
+        }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
